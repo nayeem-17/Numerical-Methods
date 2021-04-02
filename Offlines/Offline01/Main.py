@@ -75,6 +75,7 @@ def show_table(lower_bound, upper_bound, maxIteration):
     # absolute relative approx. error after each iteration of the bisection method for up
     # to 20 iterations
     x_val = []
+    index = np.arange(1, maxIteration + 1)
     err = ["-"]
     for _ in range(maxIteration):
         avg = (lower_bound + upper_bound) / 2
@@ -103,7 +104,7 @@ def show_table(lower_bound, upper_bound, maxIteration):
 
     table = {"values": x_val, "error": err}
     df = pd.DataFrame(table)
-    df.index = np.arange(1, 21)
+    df.index = index
     # displaying the DataFrame
     print(df)
 
